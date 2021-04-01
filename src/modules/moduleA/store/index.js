@@ -1,3 +1,5 @@
+import mock from './mock.json';
+
 export default {
   state: {
     list: [],
@@ -5,14 +7,29 @@ export default {
   getters: {
   },
   mutations: {
-    addToList(state, item) {
-      state.list.push(item);
+    addToList(state, items) {
+      items.forEach((item) => {
+        state.list.push(item);
+      });
     },
   },
   actions: {
-    getData({ commit }) {
-
-      // commit('addToList', item);
+    async getData({ commit }) {
+      if (process.env.NODE_ENV === 'development') {
+        commit('addToList', mock);
+      } else {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        try {
+          if (response.ok) {
+            const data = await response.json();
+            commit('addToList', data);
+          } else {
+            console.error(response.status);
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
     },
   },
 };
