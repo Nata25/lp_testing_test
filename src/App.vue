@@ -1,19 +1,28 @@
 <template>
-  <white-layout class="root">
+  <component
+    :is="layout"
+    class="root"
+  >
     <transition
       name="fade"
       mode="out-in"
     >
       <router-view />
     </transition>
-  </white-layout>
+  </component>
 </template>
 
 <script>
 import WhiteLayout from '@/layouts/WhiteLayout.vue';
+import DarkLayout from '@/layouts/DarkLayout.vue';
 
 export default {
-  components: { WhiteLayout },
+  components: { WhiteLayout, DarkLayout },
+  computed: {
+    layout() {
+      return `${this.$route.meta.layout || 'White'}Layout`;
+    },
+  },
 };
 </script>
 

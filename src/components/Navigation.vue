@@ -45,10 +45,10 @@ export default {
 
 <style scoped lang="scss">
 .wrapper {
-  background-color: #3f51b5;
+  background-color: $c-blue;
   padding: 20px;
-  box-shadow: 0 2px 4px #3f51b5;
-  border-bottom: 1px solid #100432;
+  box-shadow: 0 2px 4px $c-blue;
+  border-bottom: 1px solid $c-dark;
 }
 
 .link {

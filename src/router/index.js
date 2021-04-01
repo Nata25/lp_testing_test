@@ -13,7 +13,7 @@ const routes = [
   { path: '/moduleA', component: moduleA },
   { path: '/moduleB', component: moduleB },
   { path: '/moduleC', component: moduleC },
-  { path: '/moduleD', component: moduleD },
+  { path: '/moduleD', component: moduleD, meta: { layout: 'Dark' } },
 ];
 
 const router = new VueRouter({

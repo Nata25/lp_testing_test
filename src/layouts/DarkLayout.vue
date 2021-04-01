@@ -1,5 +1,5 @@
 <template>
-  <div class="white">
+  <div class="dark">
     <Navigation />
 
     <section class="padding">
@@ -17,8 +17,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.white {
-  color: $c-dark;
+.dark {
+  color: $c-white;
+  background-color: $c-dark;
 }
 
 .padding {

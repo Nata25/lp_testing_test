@@ -10,7 +10,9 @@
       <h3 class="title">
         {{ title }}
       </h3>
-      <p>{{ description }}</p>
+      <p class="description">
+        {{ description }}
+      </p>
     </div>
   </article>
 </template>
@@ -34,15 +36,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .card {
-    background-color: #e6e9ff;
+    background-color: $c-light-violet;
     display: inline-block;
     width: 400px;
     text-align: center;
     margin: 40px;
-    border: 1px solid #100432;
-    box-shadow: 2px 2px 4px #3f51b5;
+    border: 1px solid $c-dark;
+    box-shadow: 2px 2px 4px $c-blue;
   }
 
   .body {
@@ -51,5 +53,10 @@ export default {
 
   .title {
     font-weight: bold;
+  }
+
+  .title,
+  .description {
+    color: $c-dark;
   }
 </style>
