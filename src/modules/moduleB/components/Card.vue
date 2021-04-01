@@ -1,22 +1,36 @@
 <template>
-  <div class="card">
+  <article class="card">
     <div class="image">
       <img
-        :src="$store.state.moduleB.card.img"
-        alt=""
+        :src="img"
+        alt="title"
       >
     </div>
     <div class="body">
-      <div class="title">
-        {{ $store.state.moduleB.card.title }}
-      </div>
-      {{ $store.state.moduleB.card.description }}
+      <h3 class="title">
+        {{ title }}
+      </h3>
+      <p>{{ description }}</p>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
 export default {
+  props: {
+    img: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+  },
 };
 </script>
 

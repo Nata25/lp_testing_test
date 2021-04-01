@@ -1,11 +1,17 @@
 <template>
   <div>
     <h1>Module C</h1>
+    <Card v-bind="card" />
   </div>
 </template>
 
 <script>
+import Card from '@/modules/moduleB/components/Card.vue';
+
 export default {
+  components: {
+    Card,
+  },
   data() {
     return {
       card: {
