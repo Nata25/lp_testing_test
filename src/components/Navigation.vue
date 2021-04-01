@@ -33,6 +33,10 @@ export default {
           to: '/moduleC',
           name: 'moduleC',
         },
+        {
+          to: '/moduleD',
+          name: 'moduleD',
+        },
       ],
     };
   },

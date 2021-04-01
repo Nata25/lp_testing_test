@@ -1,6 +1,9 @@
 <template>
   <white-layout class="root">
-    <transition name="fade">
+    <transition
+      name="fade"
+      mode="out-in"
+    >
       <router-view />
     </transition>
   </white-layout>
